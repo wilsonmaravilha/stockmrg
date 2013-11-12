@@ -10,12 +10,8 @@
       <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%= model_class.human_attribute_name(:details) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
-      <th><%= model_class.human_attribute_name(:supplier) %></th>
       <th><%= model_class.human_attribute_name(:expiry_date) %></th>
-      <th><%= model_class.human_attribute_name(:purchase_date) %></th>
       <th><%= model_class.human_attribute_name(:sell_by_date) %></th>
-      <th><%= model_class.human_attribute_name(:recommended_quantity) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -27,12 +23,8 @@
         <td><%= item.price %></td>
         <td><%= item.details %></td>
         <td><%= item.quantity %></td>
-        <td><%= item.supplier %></td>
         <td><%= item.expiry_date %></td>
-        <td><%= item.purchase_date %></td>
         <td><%= item.sell_by_date %></td>
-        <td><%= item.recommended_quantity %></td>
-        <td><%=l item.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_item_path(item), :class => 'btn btn-mini' %>
@@ -46,7 +38,22 @@
     <% end %>
   </tbody>
 </table>
-
+<div id="check_stock_levels">
+  <% @items.each do |item| %>
+    <% if item.expiry_date <= Date.today %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Warning! </strong><%= item.name %> has expired!
+      </div>
+    <% end %>
+    <% if item.quantity <= item.recommended_quantity %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Warning! </strong> your stock of <%= item.name %> is low!
+      </div>
+    <% end %>
+  <% end %>
+</div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_item_path,
             :class => 'btn btn-primary' %>

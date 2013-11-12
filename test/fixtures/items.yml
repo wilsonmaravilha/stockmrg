@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  price: 1
+  details: MyString
+  quantity: 1
+  supplier: MyString
+  expiry_date: 2013-11-12 12:04:50
+  purchase_date: 2013-11-12 12:04:50
+  sell_by_date: 2013-11-12 12:04:50
+  recommended_quantity: 1
+
+two:
+  name: MyString
+  price: 1
+  details: MyString
+  quantity: 1
+  supplier: MyString
+  expiry_date: 2013-11-12 12:04:50
+  purchase_date: 2013-11-12 12:04:50
+  sell_by_date: 2013-11-12 12:04:50
+  recommended_quantity: 1

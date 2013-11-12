@@ -1,0 +1,62 @@
+<%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :details, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :details, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :quantity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :quantity, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :supplier, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :supplier, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :expiry_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :expiry_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :purchase_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :purchase_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sell_by_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sell_by_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :recommended_quantity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :recommended_quantity, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                items_path, :class => 'btn' %>
+  </div>
+<% end %>

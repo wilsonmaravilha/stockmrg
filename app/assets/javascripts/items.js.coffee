@@ -4,7 +4,7 @@
 jQuery ->
   $('.datepicker').datepicker()
   $('#sandbox-container div').datepicker({
-    format: "d/m/yyyy",
+    format: "yyyy/mm/dd",
     todayBtn: "linked",
     orientation: "auto right",
     todayHighlight: true});

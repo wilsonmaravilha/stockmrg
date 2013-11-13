@@ -1,3 +1,4 @@
+
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -60,6 +61,10 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+    def updatestock
+      @items = Item.find(:all, :order => 'name')
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

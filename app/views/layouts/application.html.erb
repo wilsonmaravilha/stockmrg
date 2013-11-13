@@ -38,7 +38,7 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -47,9 +47,12 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Pascal's Stock Manager</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-            </ul>
+            <div class="container nav-collapse">
+              <ul class="nav">
+                <li><%= link_to "Update Stock", items_updatestock_path  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -61,12 +64,13 @@
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
-          <div class="span2">
+          <div class="span3">
             <div class="well sidebar-nav pull-right">
-              <h3>Options</h3>
+              <h3>Messages</h3>
+              <p>Welcome, Pascal! For now, I am still working on the dates. At the moment they must be entered manually in the month/day/year format. </p>
               <ul class="nav nav-list">
                 <li class="nav-header"></li>
-                <li><p><i class="icon-comment"></i><%= link_to "Contact Dev", "mailto:wilsonmaravilha@gmail.com"%></li>
+                <li><p><i class="icon-comment"></i><%= link_to "Reply", "mailto:wilsonmaravilha@gmail.com"%></li>
               </ul>
             </div><!--/.well -->
           </div><!--/span-->
@@ -78,7 +82,7 @@
 
 
 <!-- FOOTER -->
-    <nav id="footbar" class="navbar-fixed-bottom pull-up" >
+    <nav id="footbar" class="navbar-fixed-bottom pull-up navbar-inverse" >
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inner">
